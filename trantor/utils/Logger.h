@@ -17,6 +17,7 @@
 #include <trantor/utils/NonCopyable.h>
 #include <trantor/utils/Date.h>
 #include <trantor/utils/LogStream.h>
+#include <trantor/exports.h>
 #include <string.h>
 #include <functional>
 #include <iostream>
@@ -27,7 +28,7 @@ namespace trantor
  * @brief This class implements log functions.
  *
  */
-class Logger : public NonCopyable
+class TRANTOR_EXPORT Logger : public NonCopyable
 {
   public:
     enum LogLevel
@@ -282,5 +283,5 @@ class Logger : public NonCopyable
     Tensor::Logger(__FILE__, __LINE__, Tensor::Logger::kFatal).stream()
 #endif
 
-const char *strerror_tl(int savedErrno);
+TRANTOR_EXPORT const char *strerror_tl(int savedErrno);
 }  // namespace trantor
